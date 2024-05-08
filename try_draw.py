@@ -13,7 +13,7 @@ t.speed(0)  # 设置绘制速度为最快
 
 # 定义函数来绘制六边形
 def draw_hexagon(x, y, color_index):
-    colors = ['grey', 'black', 'blue']  # 三种颜色
+    colors = ['DarkGray', 'Black', 'dodgerblue']  # 三种颜色
     heading = t.heading()  # 保存当前朝向
     t.penup()  # 抬起画笔
     t.goto(x, y)  # 移动到指定位置
