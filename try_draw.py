@@ -10,13 +10,18 @@ gap_pixel_y = int (1.5 * side_pixel)
 # 创建Turtle对象
 t = turtle.Turtle()
 t.speed(0)  # 设置绘制速度为最快
+screen = turtle.Screen()
+screen.setup(width=800, height=600)  # 设置画布大小为800x600
+
+draw_hexagon_x_offset = - screen.window_width() / 2 + side_pixel * 2
+draw_hexagon_y_offset = screen.window_height() / 2 - side_pixel
 
 # 定义函数来绘制六边形
 def draw_hexagon(x, y, color_index):
     colors = ['DarkGray', 'Black', 'dodgerblue']  # 三种颜色
     heading = t.heading()  # 保存当前朝向
     t.penup()  # 抬起画笔
-    t.goto(x, y)  # 移动到指定位置
+    t.goto(x + draw_hexagon_x_offset, y + draw_hexagon_y_offset)  # 移动到指定位置
     t.pendown()  # 落下画笔
     t.fillcolor(colors[color_index])  # 填充颜色
     t.begin_fill()  # 开始填充
